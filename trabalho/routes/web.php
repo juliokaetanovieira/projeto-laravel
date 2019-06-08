@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/clientes', 'ClientesController@index');
+Route::get('/clientes/novo', 'clientesController@create');
+Route::post('/clientes/salvar', 'clientesController@store');
+Route::post('/clientes/gravar/{id}', 'clientesController@update');
+Route::get('/clientes/{id}', 'clientesController@show');
+Route::get('/clientes/editar/{id}', 'clientesController@edit');
+Route::get('/clientes/excluir/{id}', 'clientesController@destroy');
+
+
